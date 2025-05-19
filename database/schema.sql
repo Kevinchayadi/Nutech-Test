@@ -1,4 +1,4 @@
-//users table
+-- users table
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-// banners table
+-- banners table
 CREATE TABLE IF NOT EXISTS banners (
     id SERIAL PRIMARY KEY,
     banner_name VARCHAR(255) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS banners (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-//services table
+-- services table
 CREATE TABLE IF NOT EXISTS services (
     id SERIAL PRIMARY KEY,
     service_code VARCHAR(50) UNIQUE NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS services (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-//transaction table
+-- transaction table
 CREATE TABLE IF NOT EXISTS transactions (
     id SERIAL PRIMARY KEY,
     invoice_number VARCHAR(100) UNIQUE NOT NULL,
