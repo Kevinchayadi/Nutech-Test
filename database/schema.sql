@@ -1,9 +1,5 @@
-DROP TABLE IF EXISTS transactions CASCADE;
-DROP TABLE IF EXISTS banners CASCADE;
-DROP TABLE IF EXISTS services CASCADE;
-DROP TABLE IF EXISTS users CASCADE;
--- Tabel Users
-CREATE TABLE users (
+//users table
+CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(100) NOT NULL,
@@ -15,8 +11,8 @@ CREATE TABLE users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Tabel Banner
-CREATE TABLE banners (
+// banners table
+CREATE TABLE IF NOT EXISTS banners (
     id SERIAL PRIMARY KEY,
     banner_name VARCHAR(255) NOT NULL,
     banner_image TEXT NOT NULL,
@@ -25,8 +21,8 @@ CREATE TABLE banners (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Tabel Services
-CREATE TABLE services (
+//services table
+CREATE TABLE IF NOT EXISTS services (
     id SERIAL PRIMARY KEY,
     service_code VARCHAR(50) UNIQUE NOT NULL,
     service_name VARCHAR(100) NOT NULL,
@@ -36,8 +32,8 @@ CREATE TABLE services (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Tabel Transactions
-CREATE TABLE transactions (
+//transaction table
+CREATE TABLE IF NOT EXISTS transactions (
     id SERIAL PRIMARY KEY,
     invoice_number VARCHAR(100) UNIQUE NOT NULL,
     user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
