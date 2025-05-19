@@ -4,12 +4,12 @@ import config from '../config/index.js';
 export function authMiddleware(req, res, next) {
   const authHeader = req.headers['authorization'];
   if (!authHeader) {
-    return res.status(401).json({ status: 108, message: 'Token tidak tidak valid atau kadaluwarsa' });
+    return res.status(401).json({ status: 108, message: 'Token tidak valid atau kadaluwarsa' });
   }
 
   const token = authHeader.split(' ')[1];
   if (!token) {
-    return res.status(401).json({ status: 108, message: 'Token tidak tidak valid atau kadaluwarsa' });
+    return res.status(401).json({ status: 108, message: 'Token tidak valid atau kadaluwarsa' });
   }
 
   try {
@@ -17,6 +17,6 @@ export function authMiddleware(req, res, next) {
     req.user = decoded;
     next();
   } catch (error) {
-    return res.status(401).json({ status: 108, message: 'Token tidak tidak valid atau kadaluwarsa' });
+    return res.status(401).json({ status: 108, message: 'Token tidak valid atau kadaluwarsa' });
   }
 }
