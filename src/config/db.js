@@ -2,7 +2,7 @@ import { Pool } from 'pg';
 import config from '../config/index.js';
 
 const pool = new Pool({
-  connectionString: postgresql://postgres:hudBOjBzbwywfNjcdSiDIepTOuDHbLUx@postgres.railway.internal:5432/railway,
+  connectionString: "postgresql://postgres:hudBOjBzbwywfNjcdSiDIepTOuDHbLUx@postgres.railway.internal:5432/railway",
   ssl: {
     rejectUnauthorized: false, 
   },
