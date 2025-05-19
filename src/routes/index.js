@@ -4,8 +4,8 @@ import { attachUserName } from "../middlewares/attachUserName.js";
 import { upload } from "../middlewares/uploadMiddleware.js";
 import { login, register } from "../controller/authController.js";
 import{ getProfile , updateProfile, updateProfileImage } from "../controller/profileController.js";
-import { getBalance, getTransactionHistory, topUp, Transaction  } from "../controller/TransactionController.js";
-import { getServices } from "../controller/ServiceController.js";
+import { getBalance, getTransactionHistory, topUp, Transaction  } from "../controller/transactionController.js";
+import { getServices } from "../controller/serviceController.js";
 import { getBanners } from "../controller/bannerController.js";
 
 
